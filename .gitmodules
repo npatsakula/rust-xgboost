@@ -1,4 +1,4 @@
 [submodule "xgboost-sys/xgboost"]
 	path = xgboost-sys/xgboost
-	url = https://github.com/davechallis/xgboost
-	branch = master
+	url = https://github.com/dmlc/xgboost.git
+	branch = release_1.7.0
