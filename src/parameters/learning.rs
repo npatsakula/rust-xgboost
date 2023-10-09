@@ -8,8 +8,8 @@ use super::Interval;
 
 /// Learning objective used when training a booster model.
 pub enum Objective {
-    /// Linear regression.
-    RegLinear,
+    /// Squared error.
+    RegSquaredError,
 
     /// Logistic regression.
     RegLogistic,
@@ -77,7 +77,7 @@ impl Clone for Objective {
 impl ToString for Objective {
     fn to_string(&self) -> String {
         match *self {
-            Objective::RegLinear => "reg:linear".to_owned(),
+            Objective::RegSquaredError => "reg:squarederror".to_owned(),
             Objective::RegLogistic => "reg:logistic".to_owned(),
             Objective::BinaryLogistic => "binary:logistic".to_owned(),
             Objective::BinaryLogisticRaw => "binary:logitraw".to_owned(),
@@ -97,7 +97,7 @@ impl ToString for Objective {
 }
 
 impl Default for Objective {
-    fn default() -> Self { Objective::RegLinear }
+    fn default() -> Self { Objective::RegSquaredError }
 }
 
 /// Type of evaluation metrics to use during learning.
